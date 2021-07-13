@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste articles{% endblock %}
+
+{% block body %}
+
+    {% for article in articles %}
+        <article>
+            <h2>{{ article.title | capitalize }}</h2>
+            <p>
+                {{ article.content }}
+            </p>
+            <span>
+                {{ article.publishedAt | date('d/m/y') }}
+            </span>
+        </article>
+    {% endfor %}
+{% endblock %}
